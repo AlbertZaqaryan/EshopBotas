@@ -18,7 +18,8 @@ class HomeListView(ListView):
         socmedia = SocMedia.objects.get()
         slidercount = HomeSlider.objects.all().count()
         homecateg = HomeCategory.objects.all()
-        return render(request, self.template_name, {'phone':phone, 'socmedia':socmedia, 'homeslideractive':homeslideractive, 'homeslider':homeslider, 'slidercount':slidercount, 'homecateg':homecateg})
+        prod = HomeSubCategory.objects.all()
+        return render(request, self.template_name, {'phone':phone, 'socmedia':socmedia, 'homeslideractive':homeslideractive, 'homeslider':homeslider, 'slidercount':slidercount, 'homecateg':homecateg, 'prod':prod})
 
 
 class LoginListView(ListView):
